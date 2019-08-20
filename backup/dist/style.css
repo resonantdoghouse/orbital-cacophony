@@ -1,0 +1,2453 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, .sun, .planet:nth-child(1), .planet:nth-child(2), .planet:nth-child(3), .planet:nth-child(4), .planet:nth-child(5), .planet:nth-child(6), .planet:nth-child(7), .planet:nth-child(8) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background: #060d14;
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.sun {
+  padding: 0;
+  border-radius: 50%;
+  background: yellow;
+  width: 974.4px;
+  height: 974.4px;
+  line-height: 974.4px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  flex: 0 0 auto;
+  width: 81.2px;
+  height: 81.2px;
+  background: #fed128;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.sun.active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 9744px;
+  height: 9744px;
+  background: rgba(255, 255, 0, 0.9);
+}
+.sun:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.sun__text {
+  display: none;
+  color: #fff;
+  font-size: 3.625rem;
+}
+.sun--active {
+  width: 60vw;
+  height: 60vw;
+}
+.sun--active .sun__text {
+  display: block;
+}
+
+.planet:nth-child(1) {
+  padding: 0;
+  border-radius: 50%;
+  background: #5b5480;
+  width: 10.2459px;
+  height: 10.2459px;
+  line-height: 10.2459px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: mercury 16.8s linear infinite;
+          animation: mercury 16.8s linear infinite;
+}
+.planet:nth-child(1).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 102.459px;
+  height: 102.459px;
+  background: rgba(91, 84, 128, 0.9);
+}
+.planet:nth-child(1):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes mercury {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(51.87px);
+            transform: rotate(0deg) translate(51.87px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(51.87px);
+            transform: rotate(360deg) translate(51.87px);
+  }
+}
+@keyframes mercury {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(51.87px);
+            transform: rotate(0deg) translate(51.87px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(51.87px);
+            transform: rotate(360deg) translate(51.87px);
+  }
+}
+.planet:nth-child(1) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(1) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(1) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(1) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@-webkit-keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(1) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) {
+  padding: 0;
+  border-radius: 50%;
+  background: #AE1E17;
+  width: 8.4728px;
+  height: 8.4728px;
+  line-height: 8.4728px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: venus 39.2s linear infinite;
+          animation: venus 39.2s linear infinite;
+}
+.planet:nth-child(2).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 84.728px;
+  height: 84.728px;
+  background: rgba(174, 30, 23, 0.9);
+}
+.planet:nth-child(2):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes venus {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(75.6px);
+            transform: rotate(0deg) translate(75.6px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(75.6px);
+            transform: rotate(360deg) translate(75.6px);
+  }
+}
+@keyframes venus {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(75.6px);
+            transform: rotate(0deg) translate(75.6px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(75.6px);
+            transform: rotate(360deg) translate(75.6px);
+  }
+}
+.planet:nth-child(2) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(2) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(2) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(2) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(2) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) {
+  padding: 0;
+  border-radius: 50%;
+  background: #688ecf;
+  width: 11.59522px;
+  height: 11.59522px;
+  line-height: 11.59522px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: earth 73s linear infinite;
+          animation: earth 73s linear infinite;
+}
+.planet:nth-child(3).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 115.9522px;
+  height: 115.9522px;
+  background: rgba(104, 142, 207, 0.9);
+}
+.planet:nth-child(3):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes earth {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(104.3px);
+            transform: rotate(0deg) translate(104.3px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(104.3px);
+            transform: rotate(360deg) translate(104.3px);
+  }
+}
+@keyframes earth {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(104.3px);
+            transform: rotate(0deg) translate(104.3px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(104.3px);
+            transform: rotate(360deg) translate(104.3px);
+  }
+}
+.planet:nth-child(3) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(3) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(3) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(3) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(3) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) {
+  padding: 0;
+  border-radius: 50%;
+  background: #C1440D;
+  width: 6.64342px;
+  height: 6.64342px;
+  line-height: 6.64342px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: mars 128.8s linear infinite;
+          animation: mars 128.8s linear infinite;
+}
+.planet:nth-child(4).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 66.4342px;
+  height: 66.4342px;
+  background: rgba(193, 68, 13, 0.9);
+}
+.planet:nth-child(4):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes mars {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(135.66px);
+            transform: rotate(0deg) translate(135.66px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(135.66px);
+            transform: rotate(360deg) translate(135.66px);
+  }
+}
+@keyframes mars {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(135.66px);
+            transform: rotate(0deg) translate(135.66px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(135.66px);
+            transform: rotate(360deg) translate(135.66px);
+  }
+}
+.planet:nth-child(4) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(4) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(4) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(4) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(4) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) {
+  padding: 0;
+  border-radius: 50%;
+  background: #F6A855;
+  width: 26.5265px;
+  height: 26.5265px;
+  line-height: 26.5265px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: jupiter 238.56s linear infinite;
+          animation: jupiter 238.56s linear infinite;
+}
+.planet:nth-child(5).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 265.265px;
+  height: 265.265px;
+  background: rgba(246, 168, 85, 0.9);
+}
+.planet:nth-child(5):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes jupiter {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(163.8px);
+            transform: rotate(0deg) translate(163.8px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(163.8px);
+            transform: rotate(360deg) translate(163.8px);
+  }
+}
+@keyframes jupiter {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(163.8px);
+            transform: rotate(0deg) translate(163.8px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(163.8px);
+            transform: rotate(360deg) translate(163.8px);
+  }
+}
+.planet:nth-child(5) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(5) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(5) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(5) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(5) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) {
+  padding: 0;
+  border-radius: 50%;
+  background: #0d7f98;
+  width: 16.30496px;
+  height: 16.30496px;
+  line-height: 16.30496px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: saturn 198.24s linear infinite;
+          animation: saturn 198.24s linear infinite;
+}
+.planet:nth-child(6).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 163.0496px;
+  height: 163.0496px;
+  background: rgba(13, 127, 152, 0.9);
+}
+.planet:nth-child(6):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes saturn {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(201.18px);
+            transform: rotate(0deg) translate(201.18px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(201.18px);
+            transform: rotate(360deg) translate(201.18px);
+  }
+}
+@keyframes saturn {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(201.18px);
+            transform: rotate(0deg) translate(201.18px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(201.18px);
+            transform: rotate(360deg) translate(201.18px);
+  }
+}
+.planet:nth-child(6) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(6) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(6) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(6) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(6) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) {
+  padding: 0;
+  border-radius: 50%;
+  background: #C5EAF0;
+  width: 7.10136px;
+  height: 7.10136px;
+  line-height: 7.10136px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: uranus 339.024s linear infinite;
+          animation: uranus 339.024s linear infinite;
+}
+.planet:nth-child(7).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 71.0136px;
+  height: 71.0136px;
+  background: rgba(197, 234, 240, 0.9);
+}
+.planet:nth-child(7):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes uranus {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(221.067px);
+            transform: rotate(0deg) translate(221.067px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(221.067px);
+            transform: rotate(360deg) translate(221.067px);
+  }
+}
+@keyframes uranus {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(221.067px);
+            transform: rotate(0deg) translate(221.067px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(221.067px);
+            transform: rotate(360deg) translate(221.067px);
+  }
+}
+.planet:nth-child(7) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(7) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(7) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(7) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(7) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) {
+  padding: 0;
+  border-radius: 50%;
+  background: #5e98f9;
+  width: 6.89416px;
+  height: 6.89416px;
+  line-height: 6.89416px;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: neptune 664.944s linear infinite;
+          animation: neptune 664.944s linear infinite;
+}
+.planet:nth-child(8).active {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  transition: 0.6s;
+  width: 68.9416px;
+  height: 68.9416px;
+  background: rgba(94, 152, 249, 0.9);
+}
+.planet:nth-child(8):hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+@-webkit-keyframes neptune {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(251.72px);
+            transform: rotate(0deg) translate(251.72px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(251.72px);
+            transform: rotate(360deg) translate(251.72px);
+  }
+}
+@keyframes neptune {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(251.72px);
+            transform: rotate(0deg) translate(251.72px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(251.72px);
+            transform: rotate(360deg) translate(251.72px);
+  }
+}
+.planet:nth-child(8) .moon {
+  background: #12273b;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.planet:nth-child(8) .moon.active {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  width: 10%;
+  height: 10%;
+}
+.planet:nth-child(8) .moon.active:hover {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+.planet:nth-child(8) .moon.active:nth-of-type(1) {
+  position: absolute;
+  background: #0f2133;
+  -webkit-animation: moon 12s 1s linear infinite;
+          animation: moon 12s 1s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(2) {
+  position: absolute;
+  background: #193653;
+  -webkit-animation: moon 12s 2s linear infinite;
+          animation: moon 12s 2s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(3) {
+  position: absolute;
+  background: #224a72;
+  -webkit-animation: moon 12s 3s linear infinite;
+          animation: moon 12s 3s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(4) {
+  position: absolute;
+  background: #2c5f92;
+  -webkit-animation: moon 12s 4s linear infinite;
+          animation: moon 12s 4s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(5) {
+  position: absolute;
+  background: #3573b1;
+  -webkit-animation: moon 12s 5s linear infinite;
+          animation: moon 12s 5s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(6) {
+  position: absolute;
+  background: #4787c8;
+  -webkit-animation: moon 12s 6s linear infinite;
+          animation: moon 12s 6s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(7) {
+  position: absolute;
+  background: #669cd1;
+  -webkit-animation: moon 12s 7s linear infinite;
+          animation: moon 12s 7s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(8) {
+  position: absolute;
+  background: #86b0db;
+  -webkit-animation: moon 12s 8s linear infinite;
+          animation: moon 12s 8s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(9) {
+  position: absolute;
+  background: #a5c5e4;
+  -webkit-animation: moon 12s 9s linear infinite;
+          animation: moon 12s 9s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(10) {
+  position: absolute;
+  background: #c5d9ed;
+  -webkit-animation: moon 12s 10s linear infinite;
+          animation: moon 12s 10s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(11) {
+  position: absolute;
+  background: #e4edf7;
+  -webkit-animation: moon 12s 11s linear infinite;
+          animation: moon 12s 11s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}
+.planet:nth-child(8) .moon.active:nth-of-type(12) {
+  position: absolute;
+  background: white;
+  -webkit-animation: moon 12s 12s linear infinite;
+          animation: moon 12s 12s linear infinite;
+}
+@keyframes moon {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotate(0deg) translate(140px);
+            transform: rotate(0deg) translate(140px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: rotate(360deg) translate(140px);
+            transform: rotate(360deg) translate(140px);
+  }
+}

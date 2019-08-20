@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// size
+$size-mod: 0.7px;
+$sun-size: 1392 * $size-mod;
+$mercury-size: 4.879 * $size-mod;
+$venus-size: 12.104 * $size-mod;
+$earth-size: 12.742 * $size-mod;
+$mars-size: 6.779 * $size-mod;
+$jupiter-size: 143 * $size-mod;
+$saturn-size: 116.464 * $size-mod;
+$uranus-size: 50.724 * $size-mod;
+$neptune-size: 49.244 * $size-mod;
+// orbit
+$planet-orbit-mod: 0.2;
+// color
+$white: #fff;
+$black: #060d14;
+
+@mixin orbit($planet, $distance) {
+  @keyframes #{$planet} {
+    0% {
+      opacity: 1;
+      transform: rotate(0deg) translate($distance);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(360deg) translate($distance);
+    }
+  }
+}
+
+%centered-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin planet($size, $color) {
+  padding: 0;
+  border-radius: 50%;
+  background: $color;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  position: absolute;
+  transition: 0.3s;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  @extend %centered-xy;
+  transform-origin: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &.active {
+    animation-play-state: paused;
+    transition: 0.6s;
+    width: $size * 10;
+    height: $size * 10;
+    background: rgba($color, 0.9);
+  } // .active
+  &:hover {
+    animation-play-state: paused;
+  }
+} // planet mixin
+
+@mixin moon($number, $distance) {
+  background: lighten($black, 10%);
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+  animation-play-state: paused;
+  &.active {
+    animation-play-state: running;
+    width: 10%;
+    height: 10%;
+    &:hover {
+      animation-play-state: paused !important;
+    }
+    @for $i from 1 through $number {
+      &:nth-of-type(#{$i}) {
+        position: absolute;
+        background: lighten($black, $i * 8%);
+        @include orbit(moon, $distance * $size-mod);
+        animation: moon 60 * $planet-orbit-mod + s $i + s linear infinite;
+      }
+    }
+  }
+} // moon mixin
+
+body {
+  background: $black;
+  min-height: 100vh;
+  width: 100%;
+  @extend %centered-xy;
+  font-family: 'Space Mono', monospace;
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $white;
+  text-transform: capitalize;
+}
+
+.sun {
+  $self: &;
+  @extend %centered-xy;
+  @include planet($sun-size, yellow);
+  flex: 0 0 auto;
+  width: $sun-size / 12;
+  height: $sun-size / 12;
+  background: #fed128;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &__text {
+    display: none;
+    color: $white;
+    font-size: 3.625rem;
+  }
+  &--active {
+    width: 60vw;
+    height: 60vw;
+    #{$self}__text {
+      display: block;
+    }
+  }
+}
+
+.planet {
+  &:nth-child(1) {
+    @include planet($mercury-size * 3, #5b5480);
+    @include orbit(mercury, 57 * 1.3 * $size-mod);
+    animation: mercury 84 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+  &:nth-child(2) {
+    @include planet($venus-size, #AE1E17);
+    @include orbit(venus, 108 * $size-mod);
+    animation: venus 196 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(3) {
+    @include planet($earth-size * 1.3, #688ecf);
+    @include orbit(earth, 149 * $size-mod);
+    animation: earth 365 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(4) {
+    @include planet($mars-size * 1.4, #C1440D);
+    @include orbit(mars, 228 * 0.85 *  $size-mod);
+    animation: mars 644 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(5) {
+    @include planet($jupiter-size * 0.265, #F6A855);
+    @include orbit(jupiter, 780 * 0.3 * $size-mod);
+    animation: jupiter 3976 * 0.3 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(6) {
+    @include planet($saturn-size * 0.2, #0d7f98);
+    @include orbit(saturn, 1437 * 0.2 * $size-mod);
+    animation: saturn 9912 * 0.1 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(7) {
+    @include planet($uranus-size * 0.2, #C5EAF0);
+    @include orbit(uranus, 2871 * 0.11 * $size-mod);
+    animation: uranus 28252 * 0.06 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+
+  &:nth-child(8) {
+    @include planet($neptune-size * 0.2, #5e98f9);
+    @include orbit(neptune, 4495 * 0.08* $size-mod);
+    animation: neptune 55412 * 0.06 * $planet-orbit-mod + s linear infinite;
+    .moon {
+      @include moon(12, 200);
+    }
+  }
+}
